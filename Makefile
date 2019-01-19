@@ -13,7 +13,7 @@ config.json: ## Generate config.json configuration file interactively
 	@docker run --rm -it \
 		--volume="$(PWD):/openedx/config/" \
 		-e USERID=$(USERID) -e SILENT=$(SILENT) \
-		regis/openedx-configurator:hawthorn \
+		regis/openedx-configurator:ironwood \
 		configurator interactive
 
 substitute: config.json
@@ -22,7 +22,7 @@ substitute: config.json
 		--volume="$(TEMPLATES):/openedx/templates" \
 		--volume="$(OUTPUT):/openedx/output" \
 		-e USERID=$(USERID) -e SILENT=$(SILENT) $(CONFIGURE_OPTS) \
-		regis/openedx-configurator:hawthorn \
+		regis/openedx-configurator:ironwood \
 		configurator substitute /openedx/templates/ /openedx/output/
 
 local: ## Configure and run a ready-to-go Open edX platform

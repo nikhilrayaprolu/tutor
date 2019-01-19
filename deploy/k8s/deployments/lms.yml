@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: lms
-          image: regis/openedx:hawthorn
+          image: regis/openedx:ironwood
           ports:
             - containerPort: 8000
           volumeMounts:

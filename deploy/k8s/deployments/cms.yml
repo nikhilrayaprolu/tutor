@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cms
-          image: regis/openedx:hawthorn
+          image: regis/openedx:ironwood
           env:
           - name: SERVICE_VARIANT
             value: cms

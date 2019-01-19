@@ -15,15 +15,15 @@ ifdef THEMES
 endif
 
 build-openedx: ## Build the Open edX docker image
-	docker build -t regis/openedx:latest -t regis/openedx:hawthorn $(openedx_build_args) openedx/
+	docker build -t regis/openedx:latest -t regis/openedx:ironwood $(openedx_build_args) openedx/
 build-configurator: ## Build the configurator docker image
-	docker build -t regis/openedx-configurator:latest -t regis/openedx-configurator:hawthorn configurator/
+	docker build -t regis/openedx-configurator:latest -t regis/openedx-configurator:ironwood configurator/
 build-forum: ## Build the forum docker image
-	docker build -t regis/openedx-forum:latest -t regis/openedx-forum:hawthorn forum/
+	docker build -t regis/openedx-forum:latest -t regis/openedx-forum:ironwood forum/
 build-notes: ## Build the Notes docker image
-	docker build -t regis/openedx-notes:latest -t regis/openedx-notes:hawthorn notes/
+	docker build -t regis/openedx-notes:latest -t regis/openedx-notes:ironwood notes/
 build-xqueue: ## Build the Xqueue docker image
-	docker build -t regis/openedx-xqueue:latest -t regis/openedx-xqueue:hawthorn xqueue/
+	docker build -t regis/openedx-xqueue:latest -t regis/openedx-xqueue:ironwood xqueue/
 build-android: ## Build the docker image for Android 
 	docker build -t regis/openedx-android:latest android/
 
@@ -31,20 +31,20 @@ build-android: ## Build the docker image for Android
 
 push: push-openedx push-configurator push-forum push-notes push-xqueue push-android ## Push all images to dockerhub
 push-openedx: ## Push Open edX images to dockerhub
-	docker push regis/openedx:hawthorn
-	docker push regis/openedx:latest
+	docker push regis/openedx:ironwood
+	#docker push regis/openedx:latest
 push-configurator: ## Push configurator image to dockerhub
-	docker push regis/openedx-configurator:hawthorn
-	docker push regis/openedx-configurator:latest
+	docker push regis/openedx-configurator:ironwood
+	#docker push regis/openedx-configurator:latest
 push-forum: ## Push forum image to dockerhub
-	docker push regis/openedx-forum:hawthorn
-	docker push regis/openedx-forum:latest
+	docker push regis/openedx-forum:ironwood
+	#docker push regis/openedx-forum:latest
 push-notes: ## Push notes image to dockerhub
-	docker push regis/openedx-notes:hawthorn
-	docker push regis/openedx-notes:latest
+	docker push regis/openedx-notes:ironwood
+	#docker push regis/openedx-notes:latest
 push-xqueue: ## Push Xqueue image to dockerhub
-	docker push regis/openedx-xqueue:hawthorn
-	docker push regis/openedx-xqueue:latest
+	docker push regis/openedx-xqueue:ironwood
+	#docker push regis/openedx-xqueue:latest
 push-android: ## Push the Android image to dockerhub
 	docker push regis/openedx-android:latest
 

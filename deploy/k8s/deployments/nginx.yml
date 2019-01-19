@@ -14,14 +14,14 @@ spec:
     spec:
       initContainers:
         - name: clean-openedx-staticfiles
-          image: regis/openedx:hawthorn
+          image: regis/openedx:ironwood
           command: ['rm', '-rf', '/var/www/openedx/staticfiles']
           volumeMounts:
             - mountPath: /var/www/openedx/
               name: openedx-staticfiles
           imagePullPolicy: Always
         - name: init-openedx-staticfiles
-          image: regis/openedx:hawthorn
+          image: regis/openedx:ironwood
           command: ['cp', '-r', '/openedx/staticfiles', '/var/www/openedx/']
           volumeMounts:
             - mountPath: /var/www/openedx/

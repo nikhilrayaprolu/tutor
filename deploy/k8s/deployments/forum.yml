@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: forum
-          image: regis/openedx-forum:hawthorn
+          image: regis/openedx-forum:ironwood
           ports:
             - containerPort: 4567
           imagePullPolicy: Always

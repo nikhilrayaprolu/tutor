@@ -162,12 +162,12 @@ https-certificate-renew: ## Renew https certificates
 stats: ## Collect anonymous information about the platform
 	@if [ "$(DISABLE_STATS)" != "1" ] ; then \
 		docker run --rm -it --volume="$(PWD)/../env/openedx/scripts:/openedx/scripts" \
-			regis/openedx-configurator:hawthorn /openedx/scripts/stats 2> /dev/null || true ; \
+			regis/openedx-configurator:ironwood /openedx/scripts/stats 2> /dev/null || true ; \
 	fi
 
 demo-course: ## Import the demo course from edX
 	$(DOCKER_COMPOSE_RUN_OPENEDX) cms /bin/bash -c " \
-		git clone https://github.com/edx/edx-demo-course --branch open-release/hawthorn.2 --depth 1 ../edx-demo-course \
+		git clone https://github.com/edx/edx-demo-course --branch open-release/ironwood.master --depth 1 ../edx-demo-course \
 		&& python ./manage.py cms import ../data ../edx-demo-course"
 
 staff-user: ## Create a user with admin rights: make staff-user USERNAME=... EMAIL=...
