@@ -167,7 +167,7 @@ stats: ## Collect anonymous information about the platform
 
 demo-course: ## Import the demo course from edX
 	$(DOCKER_COMPOSE_RUN_OPENEDX) cms /bin/bash -c " \
-		git clone https://github.com/edx/edx-demo-course --branch open-release/ironwood.master --depth 1 ../edx-demo-course \
+		git clone https://github.com/edx/edx-demo-course --branch open-release/ironwood.1rc1 --depth 1 ../edx-demo-course \
 		&& python ./manage.py cms import ../data ../edx-demo-course"
 
 staff-user: ## Create a user with admin rights: make staff-user USERNAME=... EMAIL=...

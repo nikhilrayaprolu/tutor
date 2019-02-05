@@ -89,7 +89,7 @@ pod-exec: ## Execute a command inside an arbitrary pod: make pod-exec APP=appnam
 # environment variable.
 demo-course: ## Import the demo course from edX
 	$(call podexec,cms,/bin/bash -c "\
-		git clone https://github.com/edx/edx-demo-course --branch open-release/ironwood.master --depth 1 ../edx-demo-course \
+		git clone https://github.com/edx/edx-demo-course --branch open-release/ironwood.1rc1 --depth 1 ../edx-demo-course \
 		&& python ./manage.py cms --settings=tutor.production import ../data ../edx-demo-course")
 
 staff-user: ## Create a user with admin rights: make staff-user USERNAME=... EMAIL=...
