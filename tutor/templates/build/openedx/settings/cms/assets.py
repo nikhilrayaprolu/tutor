@@ -18,4 +18,43 @@ XQUEUE_INTERFACE = {
 DATABASES = {
     "default": {},
 }
+
+
+OAUTH_ENFORCE_SECURE = False
+
+INSTALLED_APPS += (
+    'openedx.core.djangoapps.youngsphere.api',
+    'openedx.core.djangoapps.youngsphere.sites',
+'openedx.core.djangoapps.youngsphere.progress',
+'openedx.core.djangoapps.youngsphere.social_engagement',
+    'rest_framework.authtoken'
+
+
+)
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_HEADERS = (
+    'x-requested-with',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization',
+    'x-csrftoken',
+    'cache-control',
+)
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:4200',
+)
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
+
+EDX_API_KEY = "test"
+
+MIDDLEWARE_CLASSES += (
+    'organizations.middleware.OrganizationMiddleware',
+)
+
+
 derive_settings(__name__)

@@ -60,6 +60,7 @@ RUN pip install -r /openedx/requirements/private.txt
 # the tutor-specific settings files.
 RUN mkdir -p /openedx/config ./lms/envs/tutor ./cms/envs/tutor
 ENV CONFIG_ROOT /openedx/config
+
 COPY settings/lms/*.py ./lms/envs/tutor/
 COPY settings/cms/*.py ./cms/envs/tutor/
 
