@@ -98,3 +98,4 @@ EDX_API_KEY = "test"
 MIDDLEWARE_CLASSES += (
     'organizations.middleware.OrganizationMiddleware',
 )
+SESSION_COOKIE_DOMAIN = '.youngsphere.com'
