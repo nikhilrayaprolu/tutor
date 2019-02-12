@@ -26,6 +26,7 @@ VIDEO_TRANSCRIPTS_SETTINGS['STORAGE_KWARGS']['location'] = MEDIA_ROOT
 PROFILE_IMAGE_BACKEND['options']['location'] = os.path.join(MEDIA_ROOT, 'profile-images/')
 
 ALLOWED_HOSTS = [
+    "*",
     ENV_TOKENS.get('LMS_BASE'),
     FEATURES['PREVIEW_LMS_BASE'],
     '127.0.0.1', 'localhost', 'preview.localhost',
