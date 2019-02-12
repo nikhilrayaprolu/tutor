@@ -65,16 +65,6 @@ for folder in [LOG_DIR, MEDIA_ROOT, STATIC_ROOT_BASE, ORA2_FILEUPLOAD_ROOT]:
 
 OAUTH_ENFORCE_SECURE = False
 
-INSTALLED_APPS += (
-    'openedx.core.djangoapps.youngsphere.api',
-    'openedx.core.djangoapps.youngsphere.sites',
-'openedx.core.djangoapps.youngsphere.progress',
-'openedx.core.djangoapps.youngsphere.social_engagement',
-    'rest_framework.authtoken'
-
-
-)
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = (
