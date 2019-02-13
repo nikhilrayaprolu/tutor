@@ -160,8 +160,6 @@ services:
   young_admin_back:
     image: nikhilrayaprolu/youngadminback
     restart: unless-stopped
-    expose:
-      - "8001"
 
 
   young_admin_front:
