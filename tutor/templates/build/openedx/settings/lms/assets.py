@@ -22,11 +22,9 @@ DATABASES = {
 OAUTH_ENFORCE_SECURE = False
 
 INSTALLED_APPS += (
-    'openedx.core.djangoapps.youngsphere.api',
     'openedx.core.djangoapps.youngsphere.sites',
 'openedx.core.djangoapps.youngsphere.progress',
 'openedx.core.djangoapps.youngsphere.social_engagement',
-    'rest_framework.authtoken'
 
 
 )

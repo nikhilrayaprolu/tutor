@@ -75,6 +75,7 @@ ENV PATH /openedx/bin:${PATH}
 # and requires a complex settings file. Instead, we decompose the commands
 # and run each one individually to collect the production static assets to
 # /openedx/staticfiles.
+RUN pip install --no-deps git+https://github.com/appsembler/edx-organizations.git@0.4.10-appsembler3
 RUN openedx-assets xmodule \
     && openedx-assets npm \
     && openedx-assets webpack --env=prod \
