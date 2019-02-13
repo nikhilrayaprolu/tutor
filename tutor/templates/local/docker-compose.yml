@@ -155,6 +155,19 @@ services:
       - ../../data/cms:/openedx/data
     depends_on:
       - cms
+  young_admin_back:
+    image: nikhilrayaprolu/youngadminback
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+
+
+  young_admin_front:
+    image: nikhilrayaprolu/youngadminfront
+    restart: unless-stopped
+    ports:
+      - "80:80"
+
 
   {% if ACTIVATE_NOTES %}
   ############# Notes: backend store for edX Student Notes
