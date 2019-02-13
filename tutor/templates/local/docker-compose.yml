@@ -59,6 +59,8 @@ services:
       - lms
       - cms
       {% if ACTIVATE_NOTES %}- notes{% endif %}
+      - young_admin_back
+      - young_admin_front
 
   rabbitmq:
     image: rabbitmq:3.6.10
