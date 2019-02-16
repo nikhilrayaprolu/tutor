@@ -71,7 +71,7 @@ INSTALLED_APPS += (
     'openedx.core.djangoapps.youngsphere.sites',
 'openedx.core.djangoapps.youngsphere.progress',
 'openedx.core.djangoapps.youngsphere.social_engagement',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 'wagtail.wagtailforms',
 'wagtail.wagtailredirects',
 'wagtail.wagtailembeds',
