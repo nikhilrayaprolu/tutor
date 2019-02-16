@@ -44,6 +44,25 @@ INSTALLED_APPS += (
 'openedx.core.djangoapps.youngsphere.progress',
 'openedx.core.djangoapps.youngsphere.social_engagement',
     'rest_framework.authtoken'
+'wagtail.wagtailforms',
+'wagtail.wagtailredirects',
+'wagtail.wagtailembeds',
+'wagtail.wagtailsites',
+'wagtail.wagtailusers',
+'wagtail.wagtailsnippets',
+'wagtail.wagtaildocs',
+'wagtail.wagtailimages',
+'wagtail.wagtailsearch',
+'wagtail.wagtailadmin',
+'wagtail.wagtailcore',
+
+'modelcluster',
+'taggit',
+
+'puput',
+'wagtail.contrib.wagtailsitemaps',
+'wagtail.contrib.wagtailroutablepage',
+
 
 
 )
@@ -67,7 +86,13 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 
 EDX_API_KEY = "test"
+WAGTAIL_SITE_NAME = 'Young Sphere Blog'
+PUPUT_AS_PLUGIN = True
 
 MIDDLEWARE_CLASSES += (
     'organizations.middleware.OrganizationMiddleware',
+'wagtail.wagtailcore.middleware.SiteMiddleware',
+'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+
 )
+SESSION_COOKIE_DOMAIN = '.youngsphere.com'

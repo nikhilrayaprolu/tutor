@@ -1,7 +1,8 @@
 .*.swp
 !.gitignore
 TODO
-
+*.pyc
+.idea
 /build/tutor
 /dist/
 /tutor_openedx.egg-info/
