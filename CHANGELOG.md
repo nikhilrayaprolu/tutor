@@ -1,5 +1,21 @@
 # Changelog
 
+## Latest
+
+## 3.0.5 (2019-02-14)
+
+- [Feature] Add cloud deployment script
+- [Improvement] Run `images pull` command
+- [Improvement] Run `indexcourses` on importing demo course 
+- [Improvement] Add `runserver stop` command
+
+## 3.0.4 (2019-02-13)
+
+- [Minor] Minimum required `click` version is 7.0 (#171)
+- [Bugfix] Fix `runserver` dev command (#172)
+- [Minor] Fix non-https link to documentation in pypi
+- [Minor] Fix `createuser` documentation
+
 ## 3.0.3 (2019-02-12)
 
 - [Bugfix] Add missing template data to pypi package
