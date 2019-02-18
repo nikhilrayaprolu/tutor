@@ -16,7 +16,7 @@ setup(
     version=about["__version__"],
     url="http://docs.tutor.overhang.io/",
     project_urls={
-        "Documentation": "https://docs.tutor.overhang.io/",
+        "Documentation": "http://docs.tutor.overhang.io/",
         "Code": "https://github.com/regisb/tutor",
         "Issue tracker": "https://github.com/regisb/tutor/issues",
     },
@@ -30,7 +30,7 @@ setup(
     python_requires=">=3.6",
     install_requires=[
         "appdirs",
-        "click",
+        "click>=7.0",
         "click_repl",
         "jinja2",
         "kubernetes",
