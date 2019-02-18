@@ -116,6 +116,7 @@ CORS_ALLOW_HEADERS = (
 )
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:4200',
+    'http://studio.youngsphere.com',
 )
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
