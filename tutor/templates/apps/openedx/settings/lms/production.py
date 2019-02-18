@@ -1,5 +1,13 @@
 from lms.envs.aws import *
 
+FEATURES.update({
+    'ENABLE_OAUTH2_PROVIDER': True,
+    'ENABLE_MOBILE_REST_API': True,
+    'ENABLE_COMBINED_LOGIN_REGISTRATION': True,
+    'ENABLE_COMBINED_LOGIN_REGISTRATION_FOOTER': True,
+
+})
+
 INSTALLED_APPS.remove('openedx.core.djangoapps.datadog.apps.DatadogConfig')
 
 # Load module store settings from config files
