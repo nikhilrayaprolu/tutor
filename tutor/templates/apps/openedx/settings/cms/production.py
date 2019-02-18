@@ -41,7 +41,6 @@ for folder in [LOG_DIR, MEDIA_ROOT, STATIC_ROOT_BASE]:
 OAUTH_ENFORCE_SECURE = False
 
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = (
     'x-requested-with',
