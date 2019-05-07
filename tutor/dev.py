@@ -102,7 +102,7 @@ def docker_compose(root, *command):
     )
 
 def service_port(service):
-    return 8001 if service == "lms" else 8000
+    return 8000 if service == "lms" else 8001
 
 dev.add_command(run)
 dev.add_command(runserver)
