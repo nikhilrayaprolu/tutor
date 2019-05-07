@@ -41,6 +41,11 @@ def main():
     webpack.add_argument('-e', '--env', choices=['prod', 'dev'], default='prod')
     webpack.set_defaults(func=run_webpack)
 
+    watch_webpack = subparsers.add_parser('watch_webpack', help="Run webpack")
+    watch_webpack.add_argument('-r', '--static-root', default=DEFAULT_STATIC_ROOT)
+    watch_webpack.add_argument('-e', '--env', choices=['prod', 'dev'], default='prod')
+    watch_webpack.set_defaults(func=watch_webpack)
+
     common = subparsers.add_parser('common', help="Compile static assets for common theme")
     common.add_argument('--systems', nargs='+', default=['lms', 'cms'])
     common.set_defaults(func=run_common)
@@ -87,6 +92,17 @@ def run_webpack(args):
     }[args.env]
     subprocess.call([
         'webpack', '--config=webpack.{env}.config.js'.format(env=args.env)
+    ])
+
+def watch_webpack(args):
+    os.environ['STATIC_ROOT_LMS'] = args.static_root
+    os.environ['STATIC_ROOT_CMS'] = os.path.join(args.static_root, 'studio')
+    os.environ['NODE_ENV'] = {
+        'prod': 'production',
+        'dev': 'development',
+    }[args.env]
+    subprocess.call([
+        'webpack', '--watch --config=webpack.{env}.config.js'.format(env=args.env)
     ])
 
 def run_common(args):

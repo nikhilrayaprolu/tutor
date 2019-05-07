@@ -95,6 +95,7 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 EDX_API_KEY = "test"
 WAGTAIL_SITE_NAME = 'Young Sphere Blog'
 PUPUT_AS_PLUGIN = True
+CLONE_COURSE_FOR_NEW_SIGNUPS = False
 
 MIDDLEWARE_CLASSES += (
     'organizations.middleware.OrganizationMiddleware',
@@ -102,4 +103,3 @@ MIDDLEWARE_CLASSES += (
 'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 
 )
-SESSION_COOKIE_DOMAIN = '.youngsphere.com'

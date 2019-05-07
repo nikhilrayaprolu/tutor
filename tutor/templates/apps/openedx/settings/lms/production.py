@@ -102,8 +102,9 @@ INSTALLED_APPS += (
 
 
 )
-CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
 CORS_ALLOW_HEADERS = (
     'x-requested-with',
     'content-type',
@@ -131,4 +132,5 @@ MIDDLEWARE_CLASSES += (
 'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 
 )
+CLONE_COURSE_FOR_NEW_SIGNUPS = False
 SESSION_COOKIE_DOMAIN = '.youngsphere.com'

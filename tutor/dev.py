@@ -90,6 +90,7 @@ def docker_compose_run(root, edx_platform_path, edx_platform_settings, *command)
     ]
     if edx_platform_path:
         run_command.append("--volume={}:/openedx/edx-platform".format(edx_platform_path))
+        run_command.append("--volume={}/themes:/openedx/themes".format(edx_platform_path))
     run_command += command
     docker_compose(root, *run_command)
 
@@ -101,7 +102,7 @@ def docker_compose(root, *command):
     )
 
 def service_port(service):
-    return 8000 if service == "lms" else 8001
+    return 8001 if service == "lms" else 8000
 
 dev.add_command(run)
 dev.add_command(runserver)
