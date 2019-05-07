@@ -77,14 +77,26 @@ ENV PATH /openedx/bin:${PATH}
 # and run each one individually to collect the production static assets to
 # /openedx/staticfiles.
 RUN pip install --no-deps git+https://github.com/appsembler/edx-organizations.git@0.4.10-appsembler3
+ADD https://api.github.com/repos/nikhilrayaprolu/Wagtail_Young/git/refs/heads/master version1.json
+
+RUN pip freeze | grep "Django"
+RUN pip install --no-deps --upgrade git+https://github.com/nikhilrayaprolu/Wagtail_Young.git
+RUN pip install --no-deps certifi==2018.11.29 chardet==3.0.4
+RUN pip freeze | grep "wagtail"
+RUN pip freeze | grep "Django"
+RUN cat /usr/local/lib/python2.7/dist-packages/wagtail/wagtailcore/middleware.py
+RUN pip install --no-deps --upgrade --force-reinstall puput==0.9.2
+RUN pip freeze | grep "wagtail"
+RUN pip freeze | grep "Django"
+RUN pip freeze | grep "puput"
 RUN openedx-assets xmodule \
     && openedx-assets npm \
     && openedx-assets webpack --env=prod \
     && openedx-assets common
 COPY ./themes/ /openedx/themes/
+
 RUN openedx-assets themes \
     && openedx-assets collect --settings=tutor.assets
-
 # service variant is "lms" or "cms"
 ENV SERVICE_VARIANT lms
 ENV SETTINGS tutor.production
@@ -94,4 +106,7 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Run server
 EXPOSE 8000
+RUN pip freeze | grep "wagtail"
+RUN pip freeze | grep "puput"
+RUN pip install django-el-pagination==3.2.4
 CMD gunicorn --name ${SERVICE_VARIANT} --bind=0.0.0.0:8000 --max-requests=1000 ${SERVICE_VARIANT}.wsgi:application

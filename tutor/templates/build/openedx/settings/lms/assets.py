@@ -25,6 +25,22 @@ INSTALLED_APPS += (
     'openedx.core.djangoapps.youngsphere.sites',
 'openedx.core.djangoapps.youngsphere.progress',
 'openedx.core.djangoapps.youngsphere.social_engagement',
+'wagtail.wagtailforms',
+'wagtail.wagtailredirects',
+'wagtail.wagtailembeds',
+'wagtail.wagtailsites',
+'wagtail.wagtailusers',
+'wagtail.wagtailsnippets',
+'wagtail.wagtaildocs',
+'wagtail.wagtailimages',
+'wagtail.wagtailsearch',
+'wagtail.wagtailadmin',
+'wagtail.wagtailcore',
+
+'modelcluster',
+'taggit',
+
+'puput',
 
 
 )
